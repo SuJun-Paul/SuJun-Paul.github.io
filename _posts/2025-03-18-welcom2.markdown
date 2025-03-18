@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Welcome to sujun!"
+date:   2025-03-18 10:37:19 +0900
+categories: chaejunsu update2
+---
+12312312

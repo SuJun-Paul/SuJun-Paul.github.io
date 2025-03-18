@@ -31,7 +31,6 @@ github_username:  SuJun-Paul
 
 # Build settings
 theme: minima
-show_rss: false
 # plugins:
 #   - jekyll-feed
 

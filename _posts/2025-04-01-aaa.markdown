@@ -1,8 +1,10 @@
 ---
 layout: null
-title:  "html"
-date:   2025-04-01 10:30:19 +0900
-categories: gpt Project
+title: "html"
+date: 2025-04-01 10:30:19 +0900
+categories: 
+  - gpt
+  - Project
 ---
 
 <!DOCTYPE html>

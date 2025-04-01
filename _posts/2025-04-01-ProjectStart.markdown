@@ -2,7 +2,7 @@
 layout: post
 title:  "개인 비서용 gpt 프로젝트"
 date:   2025-04-01 10:30:19 +0900
-categories: gptProject
+categories: gpt Project
 ---
 
 1. 프론트앤드 : Android React-native

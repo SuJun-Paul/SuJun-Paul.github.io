@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "html"
+date:   2025-04-01 10:30:19 +0900
+categories: gpt Project
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML 페이지 예시</title>
+</head>
+<body>
+  <h1>안녕하세요, HTML 페이지입니다!</h1>
+  <p>이 페이지는 Markdown 대신 HTML로 작성되었습니다.</p>
+</body>
+</html>

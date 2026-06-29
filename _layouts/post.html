@@ -181,19 +181,22 @@ script_includes:
 </article>
 
 <script>
-  // 1. 현재 포스트의 카테고리 목록을 자바스크립트 배열로 가져옵니다.
-  const mycategories = "{{ page.categories | jsonify }}";
+  // 1. 따옴표 없이 jsonify를 써야 진짜 자바스크립트 배열로 인식합니다.
+  const myPostCategories = /*{{ page.categories | jsonify }}*/ [];
   
-  // 2. 카테고리 중에 'LIFE'(또는 'Life')가 포함되어 있는지 확인합니다.
-  if (mycategories.includes('LIFE') || mycategories.includes('Life')) {
+  // 2. 배열이 정상적으로 존재할 때만 내부 로직을 실행합니다.
+  if (myPostCategories && Array.isArray(myPostCategories)) {
     
-    // 3. 포함되어 있다면 비밀번호를 물어봅니다.
-    const password = prompt("🔒 LIFE 카테고리는 비밀번호가 필요합니다:");
+    // 3. 배열 안에 대소문자 상관없이 'life'가 포함되어 있는지 검사합니다.
+    const hasLifeCategory = myPostCategories.some(cat => cat.toUpperCase() === 'LIFE');
     
-    // 4. 비밀번호가 틀렸을 때 처리
-    if (password !== "1234") { 
-      alert("❌ 비밀번호가 틀렸습니다. 이전 페이지로 이동합니다.");
-      history.back(); // 뒤로가기
+    if (hasLifeCategory) {
+      const password = prompt("🔒 LIFE 카테고리는 비밀번호가 필요합니다:");
+      
+      if (password !== "1234") { 
+        alert("❌ 비밀번호가 틀렸습니다. 이전 페이지로 이동합니다.");
+        history.back();
+      }
     }
   }
 </script>

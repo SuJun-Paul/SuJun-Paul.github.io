@@ -188,7 +188,7 @@ script_includes:
   if (myPostCategories && Array.isArray(myPostCategories)) {
     
     // 3. 배열 안에 대소문자 상관없이 'life'가 포함되어 있는지 검사합니다.
-    const hasLifeCategory = myPostCategories.some(cat => cat.toUpperCase() === 'LIFE');
+    const hasLifeCategory = myPostCategories.some(cat => cat.toUpperCase() === 'Life');
     
     if (hasLifeCategory) {
       const password = prompt("🔒 LIFE 카테고리는 비밀번호가 필요합니다:");

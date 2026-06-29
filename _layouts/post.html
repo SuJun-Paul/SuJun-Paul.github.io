@@ -179,23 +179,3 @@ script_includes:
   </div>
   <!-- div.post-tail-wrapper -->
 </article>
-
-<script>
-  // VS Code의 오해를 풀기 위한 주석 트릭
-  const myPostCategories = /* {{ page.categories | jsonify }} */ [];
-  
-  if (myPostCategories && Array.isArray(myPostCategories)) {
-    
-    // 배열 안의 카테고리를 전부 소문자로 바꾸어 'life'가 있는지 검사합니다.
-    const hasLifeCategory = myPostCategories.some(cat => cat.toLowerCase() === 'life');
-    
-    if (hasLifeCategory) {
-      const password = prompt("🔒 LIFE 카테고리는 비밀번호가 필요합니다:");
-      
-      if (password !== "1234") { 
-        alert("❌ 비밀번호가 틀렸습니다. 이전 페이지로 이동합니다.");
-        history.back();
-      }
-    }
-  }
-</script>

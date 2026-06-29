@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<article class="px-1">
+  <h1 data-toc-skip>보안이 설정된 글입니다.</h1>
+  
+  <script>
+    // 페이지 진입 시 비밀번호를 묻습니다.
+    const password = prompt("🔒 Life 카테고리는 비밀번호가 필요합니다:");
+    
+    if (password === "1234") {
+      // 비밀번호가 맞으면 본문 영역을 보여줍니다 (지킬 컨텐츠 렌더링)
+      document.write('<div class="mt-4 content">{{ content }}</div>');
+    } else {
+      alert("❌ 비밀번호가 틀렸습니다. 이전 페이지로 이동합니다.");
+      history.back();
+    }
+  </script>
+</article>

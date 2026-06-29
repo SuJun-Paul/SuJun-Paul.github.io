@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: life-locked
 title: 첫시작
 date: 2026-06-30 00:40:00 +0900
 categories: [Life]

@@ -4,20 +4,32 @@ layout: default
 
 <article class="px-1">
   <h1 data-toc-skip>🔒 보안이 설정된 글입니다.</h1>
+  
+  <div id="password-container" style="margin-top: 30px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; max-width: 400px;">
+    <p><strong>Life 카테고리 접근 비밀번호를 입력하세요.</strong></p>
+    <input type="password" id="pass-input" placeholder="비밀번호를 입력하세요" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #bbb; border-radius: 4px;">
+    <button onclick="checkPassword()" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">확인</button>
+    <p id="error-msg" style="color: red; margin-top: 10px; display: none;">❌ 비밀번호가 틀렸습니다.</p>
+  </div>
+
+  <div id="secret-content" style="display: none;">
+    <div class="mt-4 content">{{ content }}</div>
+  </div>
 
   <script>
-    // 1. 브라우저가 로드될 때 비밀번호를 물어봅니다.
-    const inputPassword = prompt("🔒 Life 카테고리 접근 비밀번호를 입력하세요:");
-    
-    // 2. 비밀번호가 '1234'와 일치하는지 확인합니다.
-    if (inputPassword === "1234") {
-      // 일치하면 아무런 동작도 하지 않고 대기하여 본문이 정상적으로 보이게 둡니다.
-      alert("✅ 인증되었습니다. 본문을 표시합니다.");
-    } else {
-      // 틀리거나 취소 누르면 즉시 뒤로가기 처리합니다.
-      alert("❌ 비밀번호가 틀렸습니다. 이전 페이지로 이동합니다.");
-      history.back();
+    function checkPassword() {
+      const inputVal = document.getElementById('pass-input').value;
+      const errorMsg = document.getElementById('error-msg');
+      
+      // 설정할 비밀번호 (여기서는 "1234")
+      if (inputVal === "1234") {
+        // 비밀번호가 맞으면 입력창을 숨기고 본문을 보여줍니다.
+        document.getElementById('password-container').style.display = 'none';
+        document.getElementById('secret-content').style.display = 'block';
+      } else {
+        // 틀리면 에러 메시지를 띄웁니다.
+        errorMsg.style.display = 'block';
+      }
     }
   </script>
-  
-  </article>
+</article>

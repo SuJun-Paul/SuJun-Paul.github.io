@@ -3,18 +3,21 @@ layout: default
 ---
 
 <article class="px-1">
-  <h1 data-toc-skip>보안이 설정된 글입니다.</h1>
-  
+  <h1 data-toc-skip>🔒 보안이 설정된 글입니다.</h1>
+
   <script>
-    // 페이지 진입 시 비밀번호를 묻습니다.
-    const password = prompt("🔒 Life 카테고리는 비밀번호가 필요합니다:");
+    // 1. 브라우저가 로드될 때 비밀번호를 물어봅니다.
+    const inputPassword = prompt("🔒 Life 카테고리 접근 비밀번호를 입력하세요:");
     
-    if (password === "1234") {
-      // 비밀번호가 맞으면 본문 영역을 보여줍니다 (지킬 컨텐츠 렌더링)
-      document.write('<div class="mt-4 content">{{ content }}</div>');
+    // 2. 비밀번호가 '1234'와 일치하는지 확인합니다.
+    if (inputPassword === "1234") {
+      // 일치하면 아무런 동작도 하지 않고 대기하여 본문이 정상적으로 보이게 둡니다.
+      alert("✅ 인증되었습니다. 본문을 표시합니다.");
     } else {
+      // 틀리거나 취소 누르면 즉시 뒤로가기 처리합니다.
       alert("❌ 비밀번호가 틀렸습니다. 이전 페이지로 이동합니다.");
       history.back();
     }
   </script>
-</article>
+  
+  </article>

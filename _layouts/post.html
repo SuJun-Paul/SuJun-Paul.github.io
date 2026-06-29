@@ -179,3 +179,21 @@ script_includes:
   </div>
   <!-- div.post-tail-wrapper -->
 </article>
+
+<script>
+  // 1. 현재 포스트의 카테고리 목록을 자바스크립트 배열로 가져옵니다.
+  const mycategories = "{{ page.categories | jsonify }}";
+  
+  // 2. 카테고리 중에 'LIFE'(또는 'Life')가 포함되어 있는지 확인합니다.
+  if (mycategories.includes('LIFE') || mycategories.includes('Life')) {
+    
+    // 3. 포함되어 있다면 비밀번호를 물어봅니다.
+    const password = prompt("🔒 LIFE 카테고리는 비밀번호가 필요합니다:");
+    
+    // 4. 비밀번호가 틀렸을 때 처리
+    if (password !== "1234") { 
+      alert("❌ 비밀번호가 틀렸습니다. 이전 페이지로 이동합니다.");
+      history.back(); // 뒤로가기
+    }
+  }
+</script>

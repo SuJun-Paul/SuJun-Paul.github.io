@@ -181,21 +181,20 @@ script_includes:
 </article>
 
 <script>
-  // 1. 따옴표 없이 jsonify를 써야 진짜 자바스크립트 배열로 인식합니다.
-  const myPostCategories = /*{{ page.categories | jsonify }}*/ [];
+  // 1. 공백을 주어 깃허브 로봇이 안전하게 치환할 수 있도록 합니다.
+  const myPostCategories = /* {{ page.categories | jsonify }} */ [];
   
-  // 2. 배열이 정상적으로 존재할 때만 내부 로직을 실행합니다.
   if (myPostCategories && Array.isArray(myPostCategories)) {
     
-    // 3. 배열 안에 대소문자 상관없이 'life'가 포함되어 있는지 검사합니다.
-    const hasLifeCategory = myPostCategories.some(cat => cat.toUpperCase() === 'Life');
+    // 2. cat.toUpperCase()를 했으므로, 비교하는 글자도 무조건 대문자 'LIFE'여야 합니다!
+    const hasLifeCategory = myPostCategories.some(cat => cat.toUpperCase() === 'LIFE');
     
     if (hasLifeCategory) {
       const password = prompt("🔒 LIFE 카테고리는 비밀번호가 필요합니다:");
       
       if (password !== "1234") { 
         alert("❌ 비밀번호가 틀렸습니다. 이전 페이지로 이동합니다.");
-        history.back();
+        history.back(); // 뒤로가기
       }
     }
   }

@@ -4,6 +4,7 @@ title: 첫시작
 date: 2026-06-30 00:40:00 +0900
 categories: [Life]
 tags: [diary]
+hidden: true
 ---
 
 다시 블로그를 시작하려고 한다.
